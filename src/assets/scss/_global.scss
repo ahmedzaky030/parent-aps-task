@@ -1,0 +1,25 @@
+$primary-color:#8E44AD;
+$secondary-color:#fff;
+$third-color:#F5F5F5;
+
+
+.my-btn{
+    background-color:$primary-color;
+    color:$secondary-color;
+    border-radius: 20px;
+   
+    
+}
+
+.container{
+    width:90%;
+    margin:0 auto;
+}
+
+.my-link{
+    color: $primary-color;
+}
+
+.bg-gray{
+    background-color:#DEDEDE !important;
+}
