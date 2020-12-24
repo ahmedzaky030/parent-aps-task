@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
@@ -6,6 +7,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { PageComponent } from './page.component';
 import { PageRoutingModule } from './page-routing';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +15,9 @@ import { PageRoutingModule } from './page-routing';
   declarations: [LoginComponent, UserListComponent, AddUserComponent, ViewUserComponent, PageComponent],
   imports: [
     CommonModule,
-    PageRoutingModule
+    //PageRoutingModule,
+    RouterModule,
+    SharedModule
   ]
 })
 export class PageModule { }
