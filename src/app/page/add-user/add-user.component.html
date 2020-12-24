@@ -1,1 +1,19 @@
-<p>add-user works!</p>
+<div>
+    <div class="d-flex justify-content-center">
+        <img class="my-image mb-3"  src="https://placeimg.com/100/100/people?t=1608759789416"/>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Job Title</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-between">
+        <a class="my-btn px-2 py-1" (click)="close()">Cancel</a>
+        <a class="my-btn px-2 py-1"  (click)="close()">Add</a>
+    </div>
+</div>
