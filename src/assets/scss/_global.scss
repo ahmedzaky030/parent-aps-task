@@ -7,6 +7,11 @@ $third-color:#F5F5F5;
     background-color:$primary-color;
     color:$secondary-color;
     border-radius: 20px;
+    &:hover {
+        border: 1px solid $primary-color;
+        background-color: $secondary-color;
+        color: $primary-color;
+    }
    
     
 }
@@ -19,7 +24,34 @@ $third-color:#F5F5F5;
 .my-link{
     color: $primary-color;
 }
+.btn-outline-primary{
+    border-color: $primary-color;
+}
+
+@for $var from 10 to 100 {
+    @if($var % 5 == 0){
+        .w-#{$var}{
+            width: #{$var +'%'} !important;
+        }
+    }
+}
+.my-image{
+    border-radius: 50%;
+    width:50%;
+    height: 50%;
+}
+
+.my-thead{
+    color:gray;
+    font-size: 10px;
+}
+
+
+
 
 .bg-gray{
     background-color:#DEDEDE !important;
+}
+.bg-light-gray{
+    background-color: $third-color;
 }
