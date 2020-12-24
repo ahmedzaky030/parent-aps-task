@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Login } from 'src/app/core/models/login.model';
 import { LoginService } from 'src/app/core/services/login.service';
 
@@ -12,7 +13,8 @@ import { LoginService } from 'src/app/core/services/login.service';
 export class LoginComponent implements OnInit {
   loginData: Login;
   constructor(private loginService: LoginService,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loginData = { email:'', password:''};
@@ -21,9 +23,12 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm){
     if(form.valid){
       this.loginService.login(form.value).subscribe((result:{token:string}) => {
-        console.log(result);
+        this.toastr.success('You have logged in successfully', 'Success')
         localStorage.setItem('token', result.token);
         this.router.navigate(['users'])
+      }, (error:{error:{error:string}}) => {
+        console.log(error.error.error)
+        this.toastr.error(error.error.error,'Error');
       })
     }
   }
