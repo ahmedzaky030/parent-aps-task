@@ -6,8 +6,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { PageComponent } from './page.component';
-import { PageRoutingModule } from './page-routing';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [LoginComponent, UserListComponent, AddUserComponent, ViewUserComponent, PageComponent],
   imports: [
     CommonModule,
+    FormsModule,
     //PageRoutingModule,
     RouterModule,
     SharedModule

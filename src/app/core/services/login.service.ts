@@ -12,6 +12,6 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   login(loginData: Login){
-    this.http.post(`${environment.endPoint}${LOGIN_URL}`, loginData)
+    return this.http.post(`${environment.endPoint}${LOGIN_URL}`, loginData)
   }
 }

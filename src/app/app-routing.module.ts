@@ -9,6 +9,7 @@ import { UserListComponent } from './page/user-list/user-list.component';
 const routes: Routes = [
   { path:'', component: LoginComponent },
   { path:'users', component: PageComponent , children:[
+    { path:'' , redirectTo:'list' , pathMatch:'full'},
     { path:'list', component:UserListComponent}
   ]}
 ];
