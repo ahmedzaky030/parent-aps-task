@@ -1,1 +1,82 @@
-<p>user-list works!</p>
+<div class="d-flex mt-3">
+  <table class="table bg-white w-80">
+    <thead>
+      <tr>
+        <th class="my-thead w-75">User</th>
+        <th class=" my-thead d-flex justify-content-center align-items-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light">
+        <td>
+          <div>
+            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/100/100/people?t=1608759789416" />
+            <label class="mx-3"><strong>John Doe</strong></label>
+          </div>
+        </td>
+        <td>
+          <div class="actions d-flex justify-content-center align-items-center">
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faPencil'></fa-icon>
+            </a>
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faTrash'></fa-icon>
+            </a>
+            <a class="my-link btn  mr-1 justify-self-end">
+              <fa-icon [icon]='faRightChivron'></fa-icon>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-light">
+
+        <td>
+          <div>
+            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/640/480/people?t=1608759789416" />
+            <label class="mx-3"><strong>John Doe</strong></label>
+          </div>
+        </td>
+        <td>
+          <div class="actions d-flex justify-content-center align-items-center">
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faPencil'></fa-icon>
+            </a>
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faTrash'></fa-icon>
+            </a>
+            <a class="my-link btn  mr-1 justify-self-end">
+              <fa-icon [icon]='faRightChivron'></fa-icon>
+            </a>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+      <tr class="table-light">
+
+        <td>
+          <div>
+            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/640/480/people?t=1608759789416" />
+            <label class="mx-3"><strong>John Doe</strong></label>
+          </div>
+        </td>
+        <td>
+          <div class="actions d-flex justify-content-center align-items-center">
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faPencil'></fa-icon>
+            </a>
+            <a class="my-link btn btn-outline-primary mr-1">
+              <fa-icon [icon]='faTrash'></fa-icon>
+            </a>
+            <a class="my-link btn  mr-1 justify-self-end">
+              <fa-icon [icon]='faRightChivron'></fa-icon>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-view-user class="w-20 mt-3"></app-view-user>
+</div>

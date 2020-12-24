@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faChevronRight, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-list',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-
+  faPencil = faPencilAlt;
+  faTrash = faTrash;
+  faRightChivron = faChevronRight;
   constructor() { }
 
   ngOnInit(): void {
