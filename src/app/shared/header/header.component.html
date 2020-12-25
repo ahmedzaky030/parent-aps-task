@@ -10,8 +10,8 @@
         <li class="list-group-item pt-4"><a class="">Home</a></li>
         <li class="list-group-item pt-4"><a class="">about</a></li>
         <li class="list-group-item pt-4"><a class="">contact</a></li>
-        <!-- <li class="list-group-item "><a href="#" class="btn py-2 px-3 rounded">enquire</a></li> -->
-        <li class="list-group-item "><a href="#" class="btn py-2 px-3 ">Login</a></li>
+        <li *ngIf="isLoggedIn" class="list-group-item "><a href="#" class="btn py-2 px-3 rounded">enquire</a></li>
+        <li *ngIf="!isLoggedIn" class="list-group-item "><a href="#" class="btn py-2 px-3 ">Login</a></li>
       </ul>
     </nav>
   </div>

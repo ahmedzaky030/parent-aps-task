@@ -7,7 +7,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { PageComponent } from './page.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     //PageRoutingModule,
     RouterModule,
     SharedModule

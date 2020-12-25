@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Login } from 'src/app/core/models/login.model';
@@ -11,19 +11,25 @@ import { LoginService } from 'src/app/core/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginData: Login;
+  loginForm: FormGroup;
   constructor(private loginService: LoginService,
     private router: Router,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.loginData = { email:'', password:''};
+    this.loginForm = this.fb.group({
+      email:['', Validators.required],
+      password:['', Validators.required]
+    })
+    
   }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: FormGroup){
     if(form.valid){
       this.loginService.login(form.value).subscribe((result:{token:string}) => {
-        this.toastr.success('You have logged in successfully', 'Success')
+        this.toastr.success('You have logged in successfully', 'Success');
+        this.loginService.loggedIn.next(true);
         localStorage.setItem('token', result.token);
         this.router.navigate(['users'])
       }, (error:{error:{error:string}}) => {
