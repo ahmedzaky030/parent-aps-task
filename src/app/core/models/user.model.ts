@@ -5,3 +5,8 @@ export interface User {
     last_name: string;
     avatar: string;
 }
+
+export interface UserJob {
+    name: string;
+    job: string;
+}

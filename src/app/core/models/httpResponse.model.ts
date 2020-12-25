@@ -1,4 +1,4 @@
-export interface HttpResponse {
+export interface ApiResponse {
     page: number;
     per_page: number;
     total: number;

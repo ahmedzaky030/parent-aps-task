@@ -1,8 +1,10 @@
+import { ApiResponse } from './../models/httpResponse.model';
 import { USER_URL } from './../constants/api';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
+import { User, UserJob } from '../models/user.model';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +13,16 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  createUser(user: User){
+  createUser(user: UserJob){
     return this.http.post(`${environment.endPoint}${USER_URL}`, user)
   }
 
-  updateUser(user: User){
+  updateUser(user: UserJob){
     return this.http.put(`${environment.endPoint}${USER_URL}`, user)
   }
 
   listUsers(){
-    return this.http.get(`${environment.endPoint}${USER_URL}`)
+    return this.http.get(`${environment.endPoint}${USER_URL}`);
   }
 
   getUser(userId: number){
