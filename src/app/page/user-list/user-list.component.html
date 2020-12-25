@@ -15,7 +15,7 @@
           </div>
         </td>
         <td>
-          <div class="actions d-flex justify-content-center align-items-center" >
+          <div class="actions mt-4 d-flex justify-content-center align-items-center" >
             <a class=" btn btn-outline-primary my-link mr-1" (click)="editUser(user)">
               <fa-icon [icon]='faPencil'></fa-icon>
             </a>
@@ -30,5 +30,5 @@
       </tr>
     </tbody>
   </table>
-  <app-view-user *ngIf="selectedUser" class="w-20 mt-3" [user]="selectedUser" (onEditClicked)="editUser(selectedUser)" (onDeleteClicked)="deleteUser(selectedUser)"></app-view-user>
+  <app-view-user *ngIf="selectedUser" class="w-20 mt-3" [user]="selectedUser" (onCloseClicked)="clearSelectedUser()" (onEditClicked)="editUser(selectedUser)" (onDeleteClicked)="deleteUser(selectedUser)"></app-view-user>
 </div>

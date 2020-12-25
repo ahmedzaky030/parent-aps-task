@@ -4,17 +4,21 @@ $third-color:#F5F5F5;
 
 
 .my-btn{
-    background-color:$primary-color;
-    color:$secondary-color;
+    background-color:$primary-color ;
+    color:$secondary-color ;
     border-radius: 20px;
+    
     &:hover {
         border: 1px solid $primary-color;
         background-color: $secondary-color;
         color: $primary-color;
+        text-decoration: none;
     }
    
     
 }
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -36,7 +40,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: $primary-color;
 }
 .btn-outline-primary{
-    border-color: $primary-color;
+    border-color: $primary-color !important;
+    color: $primary-color !important;
 }
 
 @for $var from 10 to 100 {

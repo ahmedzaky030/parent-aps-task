@@ -24,7 +24,7 @@ export class AddUserComponent implements OnInit  {
   ngOnInit(): void {
     if(this.data){
       this.editMode = true;
-      this.user = {name:this.data.first_name +''+ this.data.last_name, job:''};
+      this.user = {name:`${this.data.first_name} ${this.data.last_name}`, job:''};
     } else {
       this.user = { name:'', job:''};
       this.editMode = false;
@@ -45,6 +45,8 @@ export class AddUserComponent implements OnInit  {
           this.dialogRef.close({created: true , value:form.value})
         })
       }
+    } else {
+      this.toastr.warning('Please fill the missing fields', 'Warn')
     }
   }
 

@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       }, (error:{error:{error:string}}) => {
         this.toastr.error(error.error.error,'Error');
       })
+    } else {
+      this.toastr.warning('Please fill the missing fields', 'Warn')
     }
   }
 

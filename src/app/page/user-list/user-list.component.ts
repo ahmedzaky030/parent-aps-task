@@ -67,4 +67,8 @@ export class UserListComponent implements OnInit {
     })
   }
 
+  clearSelectedUser(){
+    this.selectedUser = null;
+  }
+
 }

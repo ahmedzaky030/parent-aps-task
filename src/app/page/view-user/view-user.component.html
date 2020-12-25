@@ -1,5 +1,5 @@
 <aside class="w-100 d-flex flex-column justify-content-between rounded shadow h-50" >
-    <div class="d-flex justify-content-end text-primary"><a><fa-icon [icon]='fatimes'></fa-icon></a></div>
+    <div class="d-flex justify-content-end text-primary"><a (click)="close()"><fa-icon [icon]='fatimes'></fa-icon></a></div>
     <div class="d-flex flex-column justify-content-center align-items-center my-3">
         <img class="my-image my-3" [src]="user?.avatar" />
         <label class="my-1"><strong>{{user?.first_name}} {{user?.last_name}}</strong></label>

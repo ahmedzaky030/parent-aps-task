@@ -15,6 +15,7 @@ export class ViewUserComponent implements OnInit {
   @Input() user: User;
   @Output() onEditClicked: EventEmitter<boolean> = new EventEmitter();
   @Output() onDeleteClicked: EventEmitter<boolean> = new EventEmitter();
+  @Output() onCloseClicked: EventEmitter<boolean> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -26,6 +27,10 @@ export class ViewUserComponent implements OnInit {
 
   deleteItem(){
     this.onDeleteClicked.emit(true);
+  }
+
+  close(){
+    this.onCloseClicked.emit(true);
   }
 
 }
