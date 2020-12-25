@@ -19,6 +19,13 @@ $third-color:#F5F5F5;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.my-table-light {
+    &.active{
+    background-color: $primary-color;
+    color:$secondary-color;
+    }
+}
+
 
 .container{
     width:90%;

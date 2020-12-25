@@ -11,6 +11,6 @@ import { ConfirmComponent } from './confirm/confirm.component'
     CommonModule,
     MatDialogModule
   ],
-  exports:[HeaderComponent , FontAwesomeModule, MatDialogModule, ConfirmComponent]
+  exports:[HeaderComponent , FontAwesomeModule, MatDialogModule, ConfirmComponent, FontAwesomeModule]
 })
 export class SharedModule { }

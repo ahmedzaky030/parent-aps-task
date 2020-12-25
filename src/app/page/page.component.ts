@@ -17,7 +17,7 @@ export class PageComponent implements OnInit {
 
   addUser(){
     const dialogRef = this.dialog.open(AddUserComponent , {
-      data: {}
+      data: null
     });
 
     dialogRef.afterClosed().subscribe(result => {
