@@ -1,76 +1,28 @@
 <div class="d-flex mt-3">
-  <table class="table bg-white w-80">
+  <table class="table bg-white" [ngClass]="{'w-100':selectedUser == null, 'w-80':selectedUser != null}">
     <thead>
       <tr>
-        <th class="my-thead w-75">User</th>
+        <th class="my-thead w-100" >User</th>
         <th class=" my-thead d-flex justify-content-center align-items-center">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-light">
+      <tr *ngFor="let user of users" class="my-table-light" [ngClass]="{'active':user.id === selectedUser?.id}" (click)="showUserDetails(user)">
         <td>
           <div>
-            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/100/100/people?t=1608759789416" />
-            <label class="mx-3"><strong>John Doe</strong></label>
+            <img class="my-image w-10 my-2 mx-2" [src]="user?.avatar" />
+            <label class="mx-3"><strong>{{user?.first_name}}  {{user?.last_name}}</strong></label>
           </div>
         </td>
         <td>
-          <div class="actions d-flex justify-content-center align-items-center">
-            <a class="my-link btn btn-outline-primary mr-1">
+          <div class="actions d-flex justify-content-center align-items-center" >
+            <a class=" btn btn-outline-primary my-link mr-1" (click)="editUser(user)">
               <fa-icon [icon]='faPencil'></fa-icon>
             </a>
-            <a class="my-link btn btn-outline-primary mr-1">
+            <a class="my-link btn btn-outline-primary mr-1" (click)="deleteUser(user)">
               <fa-icon [icon]='faTrash'></fa-icon>
             </a>
-            <a class="my-link btn  mr-1 justify-self-end">
-              <fa-icon [icon]='faRightChivron'></fa-icon>
-            </a>
-          </div>
-        </td>
-      </tr>
-      <tr class="table-light">
-
-        <td>
-          <div>
-            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/640/480/people?t=1608759789416" />
-            <label class="mx-3"><strong>John Doe</strong></label>
-          </div>
-        </td>
-        <td>
-          <div class="actions d-flex justify-content-center align-items-center">
-            <a class="my-link btn btn-outline-primary mr-1">
-              <fa-icon [icon]='faPencil'></fa-icon>
-            </a>
-            <a class="my-link btn btn-outline-primary mr-1">
-              <fa-icon [icon]='faTrash'></fa-icon>
-            </a>
-            <a class="my-link btn  mr-1 justify-self-end">
-              <fa-icon [icon]='faRightChivron'></fa-icon>
-            </a>
-          </div>
-        </td>
-      </tr>
-
-
-
-
-      <tr class="table-light">
-
-        <td>
-          <div>
-            <img class="my-image w-10 my-2 mx-2" src="https://placeimg.com/640/480/people?t=1608759789416" />
-            <label class="mx-3"><strong>John Doe</strong></label>
-          </div>
-        </td>
-        <td>
-          <div class="actions d-flex justify-content-center align-items-center">
-            <a class="my-link btn btn-outline-primary mr-1" (click)="editUser()">
-              <fa-icon [icon]='faPencil'></fa-icon>
-            </a>
-            <a class="my-link btn btn-outline-primary mr-1" (click)="deleteUser()">
-              <fa-icon [icon]='faTrash'></fa-icon>
-            </a>
-            <a class="my-link btn  mr-1 justify-self-end">
+            <a class="my-link btn  mr-1 justify-self-end" >
               <fa-icon [icon]='faRightChivron'></fa-icon>
             </a>
           </div>
@@ -78,5 +30,5 @@
       </tr>
     </tbody>
   </table>
-  <app-view-user class="w-20 mt-3"></app-view-user>
+  <app-view-user *ngIf="selectedUser" class="w-20 mt-3" [user]="selectedUser" (onEditClicked)="editUser(selectedUser)" (onDeleteClicked)="deleteUser(selectedUser)"></app-view-user>
 </div>
